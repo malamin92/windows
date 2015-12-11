@@ -26,6 +26,6 @@ class WindowsController < ApplicationController
 	private
 
 	def window_params
-		params.rquire(:window).permit(:)
+		params.rquire(:window).permit(:store_name, :location)
 	end
 end
