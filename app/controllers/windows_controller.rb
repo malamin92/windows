@@ -22,6 +22,7 @@ class WindowsController < ApplicationController
 	end
 
 	def edit
+		@window = Window.find(params[:id])
 	end
 
 	def update

@@ -1,1 +1,9 @@
-<h1>This is a placeholder for all the windows that are available to your app.</h1>
+<div class="container">
+	<div class="row">
+		<% @windows.each do |window| %>
+		<div class="col-md-4">
+			<h3><%= "#{window.store_name} | #{window.location}" %></h3>
+		</div>
+		<% end %>
+	</div>
+</div>
