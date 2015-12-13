@@ -12,7 +12,17 @@ class WindowsController < ApplicationController
 	end
 
 	def create
+		@window = Window.new(window_params)
+		if @window.save
+			flash[:success] = "New window created."
+			redirect_to @window
+		else
+			render 'new'
+		end
+	end
 
+	def edit
+		@window = Window.find(params[:id])
 	end
 
 	def update
@@ -20,12 +30,11 @@ class WindowsController < ApplicationController
 	end
 
 	def destroy
-		
 	end
 
 	private
 
 	def window_params
-		params.rquire(:window).permit(:store_name, :location)
+		params.require(:window).permit(:store_name, :location, :image)
 	end
 end
