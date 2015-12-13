@@ -35,6 +35,6 @@ class WindowsController < ApplicationController
 	private
 
 	def window_params
-		params.require(:window).permit(:store_name, :location)
+		params.require(:window).permit(:store_name, :location, :image)
 	end
 end
