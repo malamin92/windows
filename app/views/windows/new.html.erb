@@ -1,1 +1,20 @@
-<h1>This is the place holder for the new page.</h1>
+<% provide(:title, "Create a New Window") %>
+<h1 class="text-center">Create a new window:</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<%= form_for(@window) do |f| %>
+					<%= render "/shared/error_messages", object: f.object %>
+
+					<%= f.label(:store_name, "Store Name:") %>
+					<%= f.text_field(:store_name, class: "form-control") %>
+
+					<%= f.label(:location, "Location:") %>
+					<%= f.text_field(:location, class: "form-control") %>
+					<br>
+					<%= f.submit("Create Window", class: "btn btn-primary form-control") %>
+			<% end %>
+		</div>
+	</div>
+</div>
