@@ -2,6 +2,7 @@
 @import "bootstrap";
 
 $bgcolor: #1C8EB2;
+$jumbocolor: #8CDDFF;
 
 body { 
 	background: $bgcolor !important; 
@@ -12,3 +13,6 @@ body {
 	text-align: center;
 }
 
+.jumbotron {
+	background: $jumbocolor;
+}
