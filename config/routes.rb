@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :windows
 
   # You can have the root of your site routed with "root"
-  root 'windows#index'
+  root 'windows#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

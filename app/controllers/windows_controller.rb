@@ -31,6 +31,9 @@ class WindowsController < ApplicationController
 
 	def destroy
 	end
+	
+	def home	
+	end
 
 	private
 
