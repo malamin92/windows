@@ -14,5 +14,7 @@ body {
 }
 
 .jumbotron {
-	background: $jumbocolor;
+	background-image: url("jumbowindow.jpg");
+	background-size: cover;
+
 }
