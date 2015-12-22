@@ -11,10 +11,10 @@ body {
 .panel-body {
 	background:#8CDDFF;
 	text-align: center;
+
 }
 
 .jumbotron {
-	background-image: url("jumbowindow.jpg");
-	background-size: cover;
-
+	background: $jumbocolor;
+	height: auto !important;
 }
