@@ -12,7 +12,7 @@ class WindowsController < ApplicationController
 	end
 
 	def create
-		@window = Window.new(window_params)
+		@window = current_user.windows.build(window_params)
 		if @window.save
 			flash[:success] = "New window created."
 			redirect_to @window
