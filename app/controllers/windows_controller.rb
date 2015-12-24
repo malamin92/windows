@@ -26,7 +26,12 @@ class WindowsController < ApplicationController
 	end
 
 	def update
-		
+		@window = Window.find(params[:id])
+		if @window.save
+			flash[:success] = "Update window successfully."
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
