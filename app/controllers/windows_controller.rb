@@ -27,8 +27,9 @@ class WindowsController < ApplicationController
 
 	def update
 		@window = Window.find(params[:id])
-		if @window.save
-			flash[:success] = "Update window successfully."
+		if @window.update_attributes(window_params)
+			flash[:success] = "Updated window successfully."
+			redirect_to @window
 		else
 			render 'edit'
 		end
