@@ -27,17 +27,25 @@ class WindowsController < ApplicationController
 
 	def update
 		@window = Window.find(params[:id])
-		if @window.save
-			flash[:success] = "Update window successfully."
+		if @window.update_attributes(window_params)
+			flash[:success] = "Updated window successfully."
+			redirect_to @window
 		else
 			render 'edit'
 		end
 	end
 
 	def destroy
+		Window.find(params[:id]).destroy
+		flash[:success] = "Window deleted"
+		redirect_to windows_path
 	end
 	
 	def home	
+	end
+
+	def user_windows
+		@windows = current_user.windows.all
 	end
 
 	private

@@ -1,11 +1,17 @@
+
+<% provide(:title, @window.store_name ) %>
+
 <div class="container">
 	<div class="col-md-7">
 		<div class="panel panel-default">
-		<div class="panel-body">
-			<%= image_tag @window.image.url(:large)%>
-		</div>
+			<div class="panel-body">
+				<%= image_tag @window.image.url(:large)%>
+			</div>
 		<div class="panel-footer">
 			<h3><%= "Store: #{@window.store_name} | Location:#{@window.location}" %></h3>
+			<%= link_to "Delete", @window, method: :delete, 
+												data: {cofirm: "Are you sure?"} %>
+			<%= link_to "Edit", edit_window_path %>
 		</div>
 		</div>
 	</div>

@@ -1,0 +1,18 @@
+<% provide(:title, "#{current_user.email} Windows") %>
+
+<div class="container">
+	<div class="row">
+		<% @windows.each do |window| %>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-body">
+				<%= image_tag window.image.url(:medium)%>
+				</div>
+				<div class="panel-footer">
+				<h3><%= (link_to window.store_name + " | #{window.location}", window)%></h3>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
