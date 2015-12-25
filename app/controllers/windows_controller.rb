@@ -35,6 +35,9 @@ class WindowsController < ApplicationController
 	end
 
 	def destroy
+		Window.find(params[:id]).destroy
+		flash[:success] = "Window deleted"
+		redirect_to windows_path
 	end
 	
 	def home	
