@@ -44,6 +44,10 @@ class WindowsController < ApplicationController
 	def home	
 	end
 
+	def user_windows
+		@windows = current_user.windows.all
+	end
+
 	private
 
 	def window_params
