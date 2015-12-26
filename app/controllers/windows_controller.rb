@@ -1,4 +1,6 @@
 class WindowsController < ApplicationController
+	
+	
 	def new
 		@window = Window.new	
 	end
