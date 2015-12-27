@@ -1,8 +1,8 @@
 class WindowsController < ApplicationController
-	before_action :authenticate_user!	
+	before_action :authenticate_user!, except: [:index, :show]
 	
 	def new
-		@window = Window.new	
+		@window = current_user.windows.build	
 	end
 
 	def show
@@ -25,6 +25,12 @@ class WindowsController < ApplicationController
 
 	def edit
 		@window = Window.find(params[:id])
+		if current_user != @window.user
+			redirect_to windows_path
+			flash[:danger] = "You are not authorized to edit that window."
+		else
+			@window = Window.find(params[:id])
+		end
 	end
 
 	def update

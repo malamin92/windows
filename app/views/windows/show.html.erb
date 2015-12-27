@@ -9,9 +9,11 @@
 			</div>
 		<div class="panel-footer">
 			<h3><%= "Store: #{@window.store_name} | Location:#{@window.location}" %></h3>
+			<% if @window.user == current_user %>
 			<%= link_to "Delete", @window, method: :delete, 
 												data: {cofirm: "Are you sure?"} %>
 			<%= link_to "Edit", edit_window_path %>
+			<% end %>
 		</div>
 		</div>
 	</div>
