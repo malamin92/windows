@@ -1,8 +1,8 @@
 class WindowsController < ApplicationController
-	before_action :authenticate_user!	
+	before_action :authenticate_user!
 	
 	def new
-		@window = Window.new	
+		@window = current_user.windows.build	
 	end
 
 	def show
