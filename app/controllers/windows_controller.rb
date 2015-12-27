@@ -1,5 +1,5 @@
 class WindowsController < ApplicationController
-	
+	before_action :authenticate_user!	
 	
 	def new
 		@window = Window.new	
