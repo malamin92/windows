@@ -25,6 +25,12 @@ class WindowsController < ApplicationController
 
 	def edit
 		@window = Window.find(params[:id])
+		if current_user != @window.user
+			redirect_to windows_path
+			flash[:danger] = "You are not authorized to edit that window."
+		else
+			@window = Window.find(params[:id])
+		end
 	end
 
 	def update
