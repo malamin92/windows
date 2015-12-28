@@ -1,0 +1,7 @@
+<div class="container">
+	<div class="row col-md-7">
+		<p><%= comment.body %></p> 
+		<p><%= link_to "Delete", [comment.window, comment], method: :delete,
+															data: {confirm: "Are you sure?"} %></p>
+	</div>
+</div>
