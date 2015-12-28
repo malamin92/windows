@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   #associations
-  has_many :windows
+  has_many :windows, depedent: :destroy
 end
