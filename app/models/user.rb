@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   #associations
   has_many :windows, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end
