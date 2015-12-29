@@ -15,6 +15,10 @@
 				<%= link_to "Edit", edit_window_path %>
 				<% end %>
 			</div>
+			<div class="panel-footer">
+				<%= link_to "Upvote", like_window_path(@window), method: :put %>
+				<%= link_to "Downvote", dislike_window_path(@window), method: :put %>
+			</div>
 		</div>
 	</div>
 	<div class="row col-md-7">

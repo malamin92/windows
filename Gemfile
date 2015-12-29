@@ -33,7 +33,7 @@ gem "paperclip", "~> 4.3"
 
 gem 'devise'
 
-gem 'rails_12factor'
+gem 'rails_12factor', group: :development
 
 # Use Unicorn as the app server
 # gem 'unicorn'
