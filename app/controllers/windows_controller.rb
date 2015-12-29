@@ -10,7 +10,7 @@ class WindowsController < ApplicationController
 	end
 
 	def index
-		@windows = Window.all.order(:votes_for.size)
+		@windows = Window.all.order(created_at: :desc)
 	end
 
 	def create
