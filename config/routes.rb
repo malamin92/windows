@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+
   resources :windows do 
+    member do
+      put "like", to: "windows#upvote"
+      put "dislike", to: "windows#downvote"
+    end
     resources :comments, only: [:create, :destroy]
   end
 
@@ -10,7 +15,6 @@ Rails.application.routes.draw do
   root 'windows#home'
 
   get 'my_windows' => 'windows#user_windows'
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

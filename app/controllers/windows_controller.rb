@@ -10,7 +10,7 @@ class WindowsController < ApplicationController
 	end
 
 	def index
-		@windows = Window.all
+		@windows = Window.all.order(created_at: :desc)
 	end
 
 	def create
@@ -54,6 +54,18 @@ class WindowsController < ApplicationController
 
 	def user_windows
 		@windows = current_user.windows.all
+	end
+
+	def upvote
+		@window = Window.find(params[:id])
+		@window.liked_by current_user
+		redirect_to @window
+	end
+
+	def downvote
+		@window = Window.find(params[:id])
+		@window.downvote_from current_user
+		redirect_to @window
 	end
 
 	private
