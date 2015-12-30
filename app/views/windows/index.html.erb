@@ -11,6 +11,10 @@
 				<div class="panel-footer">
 					<h3><%= window.get_likes.size %> <%= (link_to window.store_name + " | #{window.location}", window)%></h3>
 				</div>
+				<div class="panel-footer">
+				<%= link_to "Upvote", like_window_path(window), method: :put %>
+				<%= link_to "Downvote", dislike_window_path(window), method: :put %>
+			</div>
 			</div>
 		</div>
 		<% end %>
