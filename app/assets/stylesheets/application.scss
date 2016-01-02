@@ -13,11 +13,15 @@ body {
 	text-align: center;
 }
 
-.panel-footer{
+.panel-footer {
 	background: gainsboro;
 }
 
 .jumbotron {
 	background: $jumbocolor;
 	height: auto !important;
+}
+
+a:hover {
+	text-decoration: none;
 }
