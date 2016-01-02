@@ -1,5 +1,5 @@
 <div class="form-group">
-	<%= form_for([@window, @comment], :html => {:role => "form"}) do |f| %>
+	<%= form_for([@window, @window.comments.build], :html => {:role => "form"}) do |f| %>
 			<%= render "/shared/error_messages", object: f.object %>
 
 			<%= f.label(:body, "Comment:") %>

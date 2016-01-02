@@ -6,9 +6,12 @@ class CommentsController < ApplicationController
 		@comment = @window.comments.build(comment_params)
 		@comment.user_id = current_user.id
 
-		@comment.save
-		redirect_to window_path(@window)
-		
+		if @comment.save
+			redirect_to window_path(@window)
+		else
+			redirect_to window_path(@window)
+			flash[:danger] = "Please enter a valid comment."
+		end
 	end
 
 	def destroy
