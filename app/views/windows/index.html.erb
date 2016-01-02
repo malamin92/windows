@@ -1,5 +1,14 @@
 <% provide(:title, "All Windows") %>
 
+<% if !user_signed_in? %>
+
+<div class="jumbotron text-center">
+	<h1>Welcome to the Windows App!</h1>
+	<p>Share all your favorite store windows!</p>
+</div>
+
+<% end %>
+
 <div class="container">
 	<div class="row">
 		<% @windows.each do |window| %>

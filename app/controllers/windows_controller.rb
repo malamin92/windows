@@ -48,9 +48,6 @@ class WindowsController < ApplicationController
 		flash[:success] = "Window deleted"
 		redirect_to windows_path
 	end
-	
-	def home	
-	end
 
 	def user_windows
 		@windows = current_user.windows.all
