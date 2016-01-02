@@ -7,8 +7,8 @@ class CommentsController < ApplicationController
 		@comment.user_id = current_user.id
 
 		@comment.save
-
 		redirect_to window_path(@window)
+		
 	end
 
 	def destroy

@@ -7,6 +7,7 @@ class WindowsController < ApplicationController
 
 	def show
 		@window = Window.find(params[:id])
+		@comment = @window.comments.build if signed_in?
 	end
 
 	def index
