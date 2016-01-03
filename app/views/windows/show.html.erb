@@ -9,6 +9,7 @@
 			</div>
 			<div class="panel-footer">
 				<h3><%= "Store: #{@window.store_name} | Location:#{@window.location}" %></h3>
+				<%= @window.get_likes.size %>
 				<%= link_to content_tag(:span), like_window_path(@window), method: :put, class: "glyphicon glyphicon-arrow-up disabled" %>
 				<%= link_to content_tag(:span), dislike_window_path(@window), method: :put, class:"glyphicon glyphicon-arrow-down disabled" %>
 				<% if @window.user == current_user %>
