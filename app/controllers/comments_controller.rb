@@ -7,7 +7,10 @@ class CommentsController < ApplicationController
 		@comment.user_id = current_user.id
 
 		if @comment.save
-			redirect_to window_path(@window)
+			respond_to do |format|
+        		format.html { redirect_to post_path(@post) }
+       			format.js 
+       		end
 		else
 			redirect_to window_path(@window)
 			flash[:danger] = "Please enter a valid comment."
