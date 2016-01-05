@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
 		@window = Window.find(params[:window_id])
 		@comment = @window.comments.build(comment_params)
 		@comment.user_id = current_user.id
+		@comments = @window.comments
 
 		if @comment.save
 			respond_to do |format|
