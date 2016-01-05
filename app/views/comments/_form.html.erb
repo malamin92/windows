@@ -3,7 +3,7 @@
 			<%= render "/shared/error_messages", object: f.object %>
 
 			<%= f.label(:body, "Comment:") %>
-			<%= f.text_area :body, class: "form-control", rows: "4" %>
+			<%= f.text_area :body, class: "form-control", rows: "4", id:"win-com-box" %>
 			<br>
 			<%= f.submit "Post Comment", class: "form-control btn btn-primary" %>
 	<% end %>
