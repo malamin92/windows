@@ -8,6 +8,7 @@ class WindowsController < ApplicationController
 	def show
 		@window = Window.find(params[:id])
 		@comments = @window.comments
+		
 	end
 
 	def index
