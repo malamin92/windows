@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
 		end
 	end
 
+
 	def destroy
 		@window = Window.find(params[:window_id])
 		@comment = @window.comments.find(params[:id])
