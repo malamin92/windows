@@ -19,9 +19,15 @@ class CommentsController < ApplicationController
 		@window = Window.find(params[:window_id])
 		@comment = @window.comments.find(params[:id])
 		@comment.destroy
-		flash[:success] = "Comment has been deleted."
+		@comments = @window.comments
 
-		redirect_to window_path(@window)
+		respond_to do |format|
+			format.html do
+				flash[:success] = "Comment has been deleted."
+				redirect_to window_path(@window) 
+			end
+			format.js
+		end
 	end
 
 	private 
