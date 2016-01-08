@@ -15,12 +15,14 @@
 		<div class="col-md-4">
 			<div class="panel panel-default">
 				<div class="panel-body">
-				<%= image_tag window.image.url(:medium)%>
+					<%= image_tag window.image.url(:medium)%>
 				</div>
 				<div class="panel-footer">
 					<%= window.get_likes.size %> 
-					<%= link_to content_tag(:span), like_window_path(window), method: :put, class: "glyphicon glyphicon-arrow-up" %>
-					<%= link_to content_tag(:span), dislike_window_path(window), method: :put, class: "glyphicon glyphicon-arrow-down" %>
+					<%= link_to content_tag(:span), like_window_path(window), method: :put, 
+													class: "glyphicon glyphicon-arrow-up" %>
+					<%= link_to content_tag(:span), dislike_window_path(window), 
+												method: :put, class: "glyphicon glyphicon-arrow-down" %>
 					<%= (link_to window.store_name + " | #{window.location}", window)%>
 				</div>
 			</div>
